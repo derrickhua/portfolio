@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+
 
 .App-logo {
   height: 40vmin;
@@ -11,6 +9,62 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Attena'; /* Custom name for your font */
+  src: url('../public/fonts/Attena.ttf') format('truetype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Manolo'; /* Custom name for your font */
+  src: url('../public/fonts/manolo-mono.ttf') format('truetype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Sugar'; /* Custom name for your font */
+  src: url('../public/fonts/sugar.otf') format('opentype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+}
+
+/* fonts */
+@font-face {
+  font-family: 'RestoraLight'; /* Custom name for your font */
+  src: url('../public/fonts/RestoraExtraLight.otf') format('opentype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+}
+
+/* fonts */
+@font-face {
+  font-family: 'RestoraItalic'; /* Custom name for your font */
+  src: url('../public/fonts/RestoraThinItalic.otf') format('opentype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Vogue'; /* Custom name for your font */
+  src: url('../public/fonts/vogue.otf') format('opentype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
+}
+
+/* fonts */
+@font-face {
+  font-family: 'Kage'; /* Custom name for your font */
+  src: url('../public/fonts/kage.otf') format('opentype'); /* Correct format for TTF */
+  font-weight: normal; /* Adjust as needed */
+  font-style: normal; /* Adjust as needed */
 }
 
 .App-header {
@@ -35,4 +89,272 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+h3, p {
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* This might need adjustment */
+  padding: 50px; /* Add padding to match the pseudo-element's border offset */
+  box-sizing: border-box; /* Ensure padding does not add to the total size */
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  border: 1.5px solid black;
+  pointer-events: none;
+  box-sizing: border-box; 
+}
+
+.intro-nav {
+  flex: 1;
+  justify-content: flex-start;
+  height: 100%;
+  padding: 50px;
+  box-sizing: border-box; 
+}
+
+.intro-nav p, .intro-nav h1{
+  margin: 0; 
+}
+
+.intro-nav nav {
+  margin-top: 50px;
+}
+
+.intro-nav ul {
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  font-family: Vogue;
+  width: 80px;
+}
+
+.intro-nav ul li {
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  margin-top: 5px;
+}
+
+.intro-nav ul li:hover {
+  color: #f0f0f0; 
+}
+
+.content-section {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  padding: 50px;
+  box-sizing: border-box; 
+  justify-content: center;
+  align-items: center;
+}
+
+.myName {
+  font-family: Sugar;
+  letter-spacing: 5px;
+  font-size: 60px;
+}
+
+.myTitle {
+  font-family: Vogue;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+.about {
+  flex: 1;
+}
+
+.about h2 {
+  font-family: Sugar;
+}
+.about p {
+  font-family: RestoraLight;
+  font-size: 15px;
+}
+
+/* skills */
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.category-title {
+  align-self: flex-start; /* Aligns the title to the start */
+  margin-right: 20px; /* Adjust spacing between title and skills */
+  margin-bottom: 0;
+  font-family: Vogue;
+  font-size: 20px;
+}
+
+.skill-list {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  flex-wrap: wrap; /* Allows skills to wrap to next line if space runs out */
+}
+
+.skill-item {
+  margin-right: 8px; /* Space between skills */
+  margin-top: 0; /* Ensures no top margin for a uniform look */
+}
+
+.mySkills h2 {
+  font-family: Sugar;
+  letter-spacing: 2px;
+}
+
+.experience-item {
+  margin-top: 30px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.experience-duration {
+  margin-left: auto; /* Pushes the duration to the right */
+  white-space: nowrap; /* Keeps the duration on one line */
+  font-family: Vogue;
+  font-size: 15px;
+}
+
+.experience-description {
+  margin-top: 10px; /* Adjust based on your design preference */
+}
+
+.experience-title{
+  font-family: Vogue;
+  font-size: 20px;
+  font-style: normal;
+}
+
+/* projects */
+
+.projects-container {
+  padding: 1em;
+}
+
+.project {
+  margin-bottom: 20px;
+}
+
+.project-title {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: Vogue;
+  color: black; /* Color of the link in default state */
+  text-decoration: none; /* Optional: If you prefer no underline */
+  transition: color 0.3s; /* For a smooth hover effect */
+}
+
+.project-title:hover {
+  color: orange; /* Or any color you prefer for hover state */
+}
+
+.project-stack {
+  font-size: 0.8em;
+  color: #666; /* Subdued text color for stack and time frame */
+  margin-bottom: 4px;
+}
+
+.project-summary {
+  margin-top: 4px;
+  font-size: 1em;
+}
+
+.project-first{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: Vogue;
+  margin-bottom: 5px;
+}
+
+.projects-container h2{
+  font-family: Sugar;
+  letter-spacing: 2px;
+}
+
+/* contact */
+.contact-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-title {
+  font-family: Vogue;
+  font-size: 20px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+.social-links {
+  list-style: none;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  gap: 15px; /* Adjust spacing between icons */
+}
+
+.social-links li a {
+  color: black; /* Default icon color */
+  text-decoration: none;
+  font-size: 24px; /* Adjust icon size */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+.social-links li a:hover {
+  color: orange; /* Hover color - change as needed */
+}
+
+
+.underlay {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #282c34; */
+}
+
+.App.container {
+  position: relative; /* Ensures .underlay can be absolutely positioned within */
+  width: 100%; /* Adjust based on your layout needs */
+  height: 100vh; /* Adjust based on your layout needs */
+  overflow: hidden; /* Prevents scrolling if the effect or content overflows */
+}
+
+.ripple {
+  width: 100%;
+  height: 100%;
 }
