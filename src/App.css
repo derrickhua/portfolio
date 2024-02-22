@@ -125,6 +125,7 @@ h3, p {
   height: 100%;
   padding: 50px;
   box-sizing: border-box; 
+
 }
 
 .intro-nav p, .intro-nav h1{
@@ -336,24 +337,41 @@ h3, p {
 }
 
 
+html, body, .App {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling to ensure underlay covers the viewport */
+}
+
 .underlay {
-  z-index: 2;
+  position: absolute; /* or fixed, if you want it to stay put while scrolling */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it beneath other content */
+}
+
+/* Ensure your content is visible over the underlay */
+.Intro, .content-section {
+  position: relative;
+  z-index: 2; /* Ensure this is above the underlay */
+}
+
+.waterSimulation {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 1; /* Behind other content */
 }
 
-.App.container {
-  position: relative; /* Ensures .underlay can be absolutely positioned within */
-  width: 100%; /* Adjust based on your layout needs */
-  height: 100vh; /* Adjust based on your layout needs */
-  overflow: hidden; /* Prevents scrolling if the effect or content overflows */
-}
 
-.ripple {
-  width: 100%;
-  height: 100%;
+
+#root {
+  z-index: 1;
+
 }

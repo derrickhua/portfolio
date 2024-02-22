@@ -21,7 +21,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: -1; /* Ensures canvas is behind other content */
+        z-index: 2; /* Ensures canvas is behind other content */
       }
     </style>
     
@@ -44,6 +44,32 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+        // Ensure the DOM is fully loaded before running the script
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const rootDiv = document.getElementById('root');
+
+            if (rootDiv) {
+              rootDiv.addEventListener('mousemove', function(event) {
+                // Check if the threejs-container exists
+                const threeJsContainer = document.getElementById('three-canvas');
+                if (threeJsContainer) {
+                    // Create a new mousemove event
+                    let eventToDispatch = new MouseEvent("mousemove", {
+                        bubbles: true,
+                        cancelable: true,
+                        clientX: event.clientX,
+                        clientY: event.clientY,
+                        screenX: event.screenX,
+                        screenY: event.screenY
+                    });
+                    // Dispatch the event to the threejs-container div
+                    threeJsContainer.dispatchEvent(eventToDispatch);
+                }
+            });
+            }
+        });
+    </script>
     <div id="root"></div>
   </body>
 </html>
