@@ -7,15 +7,27 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Skills from './components/Skills';
-import BackgroundEffect from './BackgroundEffect';
-// function WaterEffect() {
-//   const meshRef = useRef();
+import WaterSimulation from './testPlane';
 
-// }
 
 function App() {
   const [activeSection, setActiveSection] = useState('about'); // Default section
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
+  useEffect(() => {
+    const handleMouseMove = (event) => {
+      // Normalize mouse position from 0 to 1
+      const x = event.clientX / window.innerWidth;
+      const y = event.clientY / window.innerHeight;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
   const renderSection = () => {
     switch (activeSection) {
       case 'about':
@@ -34,7 +46,7 @@ function App() {
   return (
     <div className="App container">
       <div className='underlay'>
-        <BackgroundEffect />
+        <WaterSimulation />
       </div>
       <Intro setActiveSection={setActiveSection} />
       <div className="content-section">

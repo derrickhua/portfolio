@@ -337,14 +337,13 @@ h3, p {
 
 
 .underlay {
-  z-index: -1;
+  z-index: 2;
   position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #282c34; */
 }
 
 .App.container {
